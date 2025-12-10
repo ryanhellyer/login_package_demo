@@ -15,5 +15,12 @@
         "psr-4": {
             "RyanHellyer\\LoginPackageDemo\\": "src/"
         }
-    }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RyanHellyer\\LoginPackageDemo\\LoginPackageDemoServiceProvider"
+            ]
+        }
+   }
 }
