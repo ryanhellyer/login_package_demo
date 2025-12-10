@@ -2,7 +2,7 @@
 
 namespace RyanHellyer\LoginPackageDemo;
 
-use App\Http\Requests\Auth\LoginRequest;
+use RyanHellyer\LoginPackageDemo\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
