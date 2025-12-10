@@ -13,7 +13,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "RyanHellyer\\LoginPackageDemo\\": "src/"
+            "RyanHellyer\LoginPackageDemo\": "src/"
         }
     }
 }

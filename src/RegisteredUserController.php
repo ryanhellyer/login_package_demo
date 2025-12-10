@@ -2,7 +2,6 @@
 
 namespace RyanHellyer\LoginPackageDemo;
 
-use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -30,11 +29,11 @@ class RegisteredUserController extends \Illuminate\Routing\Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.config('login-package-demo-auth.user_model')],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user = User::create([
+        $user = config('login-package-demo-auth.user_model')::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
