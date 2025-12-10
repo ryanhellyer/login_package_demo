@@ -1,0 +1,19 @@
+{
+    "name": "ryanhellyer/login-package-demo",
+    "description": "A demo package for Laravel authentication controllers.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Hellyer",
+            "email": "ryan@hellyer.kiwi"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "RyanHellyer\\LoginPackageDemo\\": "src/"
+        }
+    }
+}
