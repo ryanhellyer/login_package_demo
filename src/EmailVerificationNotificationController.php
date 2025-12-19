@@ -13,7 +13,7 @@ class EmailVerificationNotificationController extends \Illuminate\Routing\Contro
     public function store(Request $request): RedirectResponse
     {
         if ($request->user()->hasVerifiedEmail()) {
-            return redirect()->intended(route('dashboard', absolute: false));
+            return redirect()->intended('/');
         }
 
         $request->user()->sendEmailVerificationNotification();
