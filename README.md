@@ -29,13 +29,25 @@ This is a demo package that extracts the authentication controllers from a Larav
     ],
     ```
 
-4.  Publish the configuration file:
+4.  Run the interactive setup command (recommended):
+
+    ```bash
+    php artisan login-package-demo:install
+    ```
+
+    This will:
+    - Prompt you for your User model class
+    - Optionally customize route paths
+    - Automatically add `.env` variables
+    - Publish and configure the config file
+
+    **Or manually configure:**
 
     ```bash
     php artisan vendor:publish --provider="RyanHellyer\LoginPackageDemo\LoginPackageDemoServiceProvider"
     ```
 
-5.  Update your `config/login-package-demo-auth.php` file to specify the user model you want to use.
+    Then update your `config/login-package-demo-auth.php` file and `.env` file manually.
 
 ## Usage
 
@@ -50,7 +62,25 @@ This package provides the following routes:
 -   `confirm-password`
 -   `password`
 
-You can use these routes in your application as you would with the default Laravel authentication system.
+### Using Built-in Views
+
+You can include the package's built-in form views anywhere in your application:
+
+```blade
+{{-- Include login form --}}
+@include('login-package-demo::auth.login')
+
+{{-- Include registration form --}}
+@include('login-package-demo::auth.register')
+
+{{-- Include forgot password form --}}
+@include('login-package-demo::auth.forgot-password')
+
+{{-- Include confirm password form --}}
+@include('login-package-demo::auth.confirm-password')
+```
+
+The GET routes redirect to `/` by default, so users should embed forms using the `@include()` directive rather than visiting dedicated pages.
 
 ## Customizing Routes
 

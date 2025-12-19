@@ -27,5 +27,11 @@ class LoginPackageDemoServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/auth.php' => config_path('login-package-demo-auth.php'),
         ]);
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Commands\InstallCommand::class,
+            ]);
+        }
     }
 }
