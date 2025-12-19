@@ -43,6 +43,6 @@ class RegisteredUserController extends \Illuminate\Routing\Controller
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect('/');
     }
 }
