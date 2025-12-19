@@ -15,8 +15,7 @@ Route::middleware('web')->group(function () {
     $routes = config('login-package-demo-auth.routes', []);
     
     Route::middleware('guest')->group(function () use ($routes) {
-        Route::get($routes['register'] ?? 'register', [RegisteredUserController::class, 'create'])
-            ->name('register');
+        Route::get($routes['register'] ?? 'register', fn() => redirect('/'))->name('register');
 
         Route::post($routes['register'] ?? 'register', [RegisteredUserController::class, 'store']);
 
@@ -24,8 +23,7 @@ Route::middleware('web')->group(function () {
 
         Route::post($routes['login'] ?? 'login', [AuthenticatedSessionController::class, 'store']);
 
-        Route::get($routes['forgot_password'] ?? 'forgot-password', [PasswordResetLinkController::class, 'create'])
-            ->name('password.request');
+        Route::get($routes['forgot_password'] ?? 'forgot-password', fn() => redirect('/'))->name('password.request');
 
         Route::post($routes['forgot_password'] ?? 'forgot-password', [PasswordResetLinkController::class, 'store'])
             ->name('password.email');
@@ -53,8 +51,7 @@ Route::middleware('web')->group(function () {
             ->middleware('throttle:6,1')
             ->name('verification.send');
 
-        Route::get($routes['confirm_password'] ?? 'confirm-password', [ConfirmablePasswordController::class, 'show'])
-            ->name('password.confirm');
+        Route::get($routes['confirm_password'] ?? 'confirm-password', fn() => redirect('/'))->name('password.confirm');
 
         Route::post($routes['confirm_password'] ?? 'confirm-password', [ConfirmablePasswordController::class, 'store']);
 
