@@ -1,4 +1,4 @@
-# Laravel Login Package Demo
+# Laravel Login Package Demo Liuba
 
 This is a demo package that extracts the authentication controllers from a Laravel application.
 
