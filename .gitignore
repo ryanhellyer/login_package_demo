@@ -1,0 +1,135 @@
+# Composer
+/vendor/
+composer.lock
+composer.phar
+
+# PHPUnit
+.phpunit.result.cache
+.phpunit.cache/
+phpunit.xml.bak
+
+# IDE - PhpStorm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# IDE - VSCode
+.vscode/
+*.code-workspace
+
+# IDE - Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# IDE - NetBeans
+nbproject/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# IDE - Eclipse
+.project
+.classpath
+.settings/
+build/
+
+# IDE - Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# OS - macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# OS - Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# OS - Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Environment files
+.env
+.env.*
+!.env.example
+.env.backup
+.env.production
+
+# Laravel specific
+/storage/*.key
+/storage/logs/
+/storage/framework/cache/
+/storage/framework/sessions/
+/storage/framework/views/
+/bootstrap/cache/
+.phpstorm.meta.php
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+
+# Testing
+/tests/.phpunit.cache/
+coverage/
+.phpunit.result.cache
+phpunit.xml.bak
+
+# Build artifacts
+/build/
+/dist/
+*.phar
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+*.bak
+*.backup
+*.old
+*.orig
+
+# Package specific
+*.zip
+*.tar.gz
+*.tar
+
+# Node (if using frontend tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Miscellaneous
+*.swo
+*.swp
+*~
+.project
+.buildpath
+.settings/
+*.sublime-workspace
+*.sublime-project
