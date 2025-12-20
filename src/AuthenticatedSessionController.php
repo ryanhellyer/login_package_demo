@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace RyanHellyer\LoginPackageDemo;
 
 use RyanHellyer\LoginPackageDemo\Http\Requests\Auth\LoginRequest;
