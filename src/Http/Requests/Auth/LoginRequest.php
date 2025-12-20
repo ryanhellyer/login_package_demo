@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace RyanHellyer\LoginPackageDemo\Http\Requests\Auth;
 
 use Illuminate\Auth\Events\Lockout;
