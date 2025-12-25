@@ -17,15 +17,15 @@ Route::middleware('web')->group(function (): void {
     $routes = config('login-package-demo-auth.routes', []);
     
     Route::middleware('guest')->group(function () use ($routes): void {
-        Route::get($routes['register'] ?? 'register', fn(): \Illuminate\Http\RedirectResponse => redirect('/'))->name('register');
+        Route::get($routes['register'] ?? 'register', [RegisteredUserController::class, 'create'])->name('register');
 
         Route::post($routes['register'] ?? 'register', [RegisteredUserController::class, 'store']);
 
-        Route::get($routes['login'] ?? 'login', fn(): \Illuminate\Http\RedirectResponse => redirect('/'))->name('login');
+        Route::get($routes['login'] ?? 'login', [AuthenticatedSessionController::class, 'create'])->name('login');
 
         Route::post($routes['login'] ?? 'login', [AuthenticatedSessionController::class, 'store']);
 
-        Route::get($routes['forgot_password'] ?? 'forgot-password', fn(): \Illuminate\Http\RedirectResponse => redirect('/'))->name('password.request');
+        Route::get($routes['forgot_password'] ?? 'forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request');
 
         Route::post($routes['forgot_password'] ?? 'forgot-password', [PasswordResetLinkController::class, 'store'])
             ->name('password.email');
@@ -53,7 +53,7 @@ Route::middleware('web')->group(function (): void {
             ->middleware('throttle:6,1')
             ->name('verification.send');
 
-        Route::get($routes['confirm_password'] ?? 'confirm-password', fn(): \Illuminate\Http\RedirectResponse => redirect('/'))->name('password.confirm');
+        Route::get($routes['confirm_password'] ?? 'confirm-password', [ConfirmablePasswordController::class, 'show'])->name('password.confirm');
 
         Route::post($routes['confirm_password'] ?? 'confirm-password', [ConfirmablePasswordController::class, 'store']);
 
