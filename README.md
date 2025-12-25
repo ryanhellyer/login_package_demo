@@ -2,6 +2,8 @@
 
 This is a demo package that extracts the authentication controllers from a Laravel application.
 
+**Note:** This code heavily borrows from [Laravel Breeze](https://github.com/laravel/breeze), a Laravel starter kit for authentication scaffolding.
+
 ## Installation
 
 1.  Add the package to your `composer.json` file:
@@ -119,3 +121,27 @@ After publishing the config file, edit `config/login-package-demo-auth.php`:
 - Route names remain consistent regardless of path customization. For example, `route('login')` will always work, even if you change the path to `sign-in`.
 - If you customize `reset-password` or `verify-email` paths, the route parameters (`{token}`, `{id}/{hash}`) will be automatically appended to your custom path.
 - Default paths are used if no customization is provided, so the package works out of the box.
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2024 Ryan Hellyer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
