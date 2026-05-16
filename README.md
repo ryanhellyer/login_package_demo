@@ -1,5 +1,7 @@
 # Laravel Login Package Demo
 
+> **Warning:** This package is **experimental** and not intended for production use. It is a work-in-progress demo and may contain bugs, incomplete features, or breaking changes at any time.
+
 This is a demo package that extracts the authentication controllers from a Laravel application.
 
 **Note:** This code heavily borrows from [Laravel Breeze](https://github.com/laravel/breeze), a Laravel starter kit for authentication scaffolding.
